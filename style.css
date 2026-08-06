@@ -1,12 +1,10 @@
-/* =====================================================
-   ADA GRÜTER PORTFOLIO
-   Main stylesheet
-===================================================== */
+/* ==========================================
+   ADA GRÜTER — PORTFOLIO STYLE
+   Modern Artist Portfolio
+========================================== */
 
 
-/* -------------------------
-   GLOBAL
--------------------------- */
+/* ---------- GLOBAL ---------- */
 
 
 * {
@@ -23,11 +21,12 @@ body {
 
     margin:0;
 
-    background:#f5f1ea;
+    background:#faf9f7;
 
     color:#111;
 
     font-family:
+    "Helvetica Neue",
     Helvetica,
     Arial,
     sans-serif;
@@ -40,6 +39,8 @@ body {
 img {
 
     max-width:100%;
+
+    display:block;
 
 }
 
@@ -54,43 +55,16 @@ a {
 
 
 
-/* -------------------------
-   CUSTOM CURSOR
--------------------------- */
 
 
-.cursor {
-
-    position:fixed;
-
-    width:28px;
-
-    height:28px;
-
-    border:1px solid #111;
-
-    border-radius:50%;
-
-    pointer-events:none;
-
-    transform:translate(-50%,-50%);
-
-    z-index:9999;
-
-    transition:
-    width .3s ease,
-    height .3s ease;
-
-}
-
-
-
-/* -------------------------
-   HEADER / NAVIGATION
--------------------------- */
+/* ---------- HEADER ---------- */
 
 
 header {
+
+    position:relative;
+
+    z-index:10;
 
     padding:35px 5vw;
 
@@ -98,7 +72,7 @@ header {
 
     justify-content:space-between;
 
-    align-items:center;
+    align-items:flex-start;
 
 }
 
@@ -106,13 +80,13 @@ header {
 
 h1 {
 
-    margin:0;
-
-    font-size:clamp(30px,4vw,50px);
+    font-size:42px;
 
     font-weight:400;
 
     letter-spacing:-2px;
+
+    margin:0;
 
 }
 
@@ -122,7 +96,7 @@ nav {
 
     display:flex;
 
-    gap:25px;
+    gap:30px;
 
 }
 
@@ -134,7 +108,9 @@ nav a {
 
     text-transform:uppercase;
 
-    letter-spacing:1px;
+    letter-spacing:1.5px;
+
+    transition:.3s;
 
 }
 
@@ -148,12 +124,13 @@ nav a:hover {
 
 
 
-/* -------------------------
-   LANDING PAGE
--------------------------- */
+
+
+/* ---------- LANDING PAGE ---------- */
 
 
 .landing {
+
 
     min-height:80vh;
 
@@ -167,13 +144,17 @@ nav a:hover {
 
     padding:5vw;
 
+
 }
 
 
 
 .landing-image {
 
-    width:min(90vw,1200px);
+
+    width:min(90vw,1400px);
+
+    animation:fadein 1.5s ease;
 
 }
 
@@ -181,15 +162,17 @@ nav a:hover {
 
 .landing-links {
 
-    margin-top:40px;
 
     display:flex;
 
-    gap:40px;
+    gap:50px;
+
+    margin-top:50px;
 
     flex-wrap:wrap;
 
     justify-content:center;
+
 
 }
 
@@ -197,47 +180,65 @@ nav a:hover {
 
 .landing-links a {
 
+
     font-size:18px;
+
+    border-bottom:1px solid transparent;
+
+    transition:.3s;
+
+
+}
+
+
+
+.landing-links a:hover {
+
+    border-color:#111;
 
 }
 
 
 
 
-/* -------------------------
-   GENERAL INTRO
--------------------------- */
+
+/* ---------- INTRO ---------- */
 
 
 .intro {
+
 
     padding:8vw 5vw;
 
     max-width:1200px;
 
-}
 
+}
 
 
 .intro h2 {
 
-    font-size:clamp(35px,6vw,80px);
 
-    line-height:1.1;
+    font-size:clamp(35px,6vw,90px);
+
+    line-height:1.05;
 
     font-weight:300;
+
+    letter-spacing:-3px;
+
 
 }
 
 
 
 
-/* -------------------------
-   PAGE HEADERS
--------------------------- */
+
+/* ---------- GENERAL PAGES ---------- */
 
 
 .page {
+
 
     padding:5vw;
 
@@ -249,11 +250,14 @@ nav a:hover {
 .archive-header h2 {
 
 
-    font-size:clamp(45px,7vw,90px);
+    font-size:clamp(50px,8vw,110px);
 
     font-weight:300;
 
-    letter-spacing:-3px;
+    letter-spacing:-5px;
+
+    margin:0 0 30px;
+
 
 }
 
@@ -262,48 +266,22 @@ nav a:hover {
 .page p,
 .archive-header p {
 
-    max-width:600px;
+
+    max-width:650px;
 
     font-size:18px;
 
     line-height:1.6;
 
-}
-
-
-
-/* -------------------------
-   PROJECT SECTIONS
--------------------------- */
-
-
-.project {
-
-    margin-bottom:120px;
 
 }
 
 
 
-.project img {
-
-    width:100%;
-
-}
 
 
 
-.project p {
-
-    margin-top:20px;
-
-}
-
-
-
-/* =====================================================
-   ILLUSTRATION ARCHIVE
-===================================================== */
+/* ---------- ILLUSTRATION ARCHIVE ---------- */
 
 
 .archive-header {
@@ -319,9 +297,9 @@ nav a:hover {
 
     columns:3;
 
-    column-gap:25px;
+    column-gap:35px;
 
-    padding:5vw;
+    padding:0 5vw 5vw;
 
 
 }
@@ -330,11 +308,15 @@ nav a:hover {
 
 .art-card {
 
+
     break-inside:avoid;
 
-    margin-bottom:25px;
+    margin-bottom:35px;
 
     cursor:pointer;
+
+    overflow:hidden;
+
 
 }
 
@@ -342,12 +324,10 @@ nav a:hover {
 
 .art-card img {
 
-    width:100%;
-
-    display:block;
 
     transition:
-    transform .6s ease;
+    transform .7s ease,
+    opacity .7s ease;
 
 
 }
@@ -357,16 +337,15 @@ nav a:hover {
 .art-card:hover img {
 
 
-    transform:scale(1.03);
-
+    transform:scale(1.04);
 
 }
 
 
 
-/* =====================================================
-   LIGHTBOX
-===================================================== */
+
+
+/* ---------- LIGHTBOX ---------- */
 
 
 .lightbox {
@@ -376,17 +355,11 @@ nav a:hover {
 
     position:fixed;
 
-    top:0;
-
-    left:0;
-
-    width:100%;
-
-    height:100%;
+    inset:0;
 
 
     background:
-    rgba(245,241,234,.96);
+    rgba(250,249,247,.97);
 
 
     z-index:1000;
@@ -396,8 +369,7 @@ nav a:hover {
 
     justify-content:center;
 
-
-    padding:40px;
+    padding:50px;
 
 
 }
@@ -407,16 +379,13 @@ nav a:hover {
 .lightbox-content {
 
 
-    max-width:1300px;
-
-    max-height:90vh;
-
-
     display:flex;
 
     align-items:center;
 
-    gap:50px;
+    gap:60px;
+
+    max-width:1400px;
 
 
 }
@@ -426,9 +395,9 @@ nav a:hover {
 .lightbox-content img {
 
 
-    max-width:70vw;
+    max-height:85vh;
 
-    max-height:80vh;
+    max-width:70vw;
 
     object-fit:contain;
 
@@ -440,7 +409,7 @@ nav a:hover {
 .info {
 
 
-    max-width:320px;
+    width:300px;
 
 
 }
@@ -450,7 +419,7 @@ nav a:hover {
 .info h3 {
 
 
-    font-size:32px;
+    font-size:34px;
 
     font-weight:400;
 
@@ -464,8 +433,8 @@ nav a:hover {
 
     line-height:1.6;
 
-
 }
+
 
 
 
@@ -475,19 +444,16 @@ nav a:hover {
 
     position:absolute;
 
+    right:40px;
 
     top:25px;
 
-    right:40px;
 
-
-    font-size:45px;
-
+    font-size:50px;
 
     background:none;
 
-    border:none;
-
+    border:0;
 
     cursor:pointer;
 
@@ -497,28 +463,125 @@ nav a:hover {
 
 
 
-/* =====================================================
-   FOOTER
-===================================================== */
+
+/* ---------- PROJECTS ---------- */
 
 
-footer {
+.project {
 
-    padding:40px 5vw;
 
-    font-size:14px;
+    margin-bottom:150px;
+
 
 }
 
 
 
-/* =====================================================
-   MOBILE
-===================================================== */
+.project img {
+
+
+    width:100%;
+
+
+}
+
+
+
+
+/* ---------- FOOTER ---------- */
+
+
+footer {
+
+
+    padding:50px 5vw;
+
+    font-size:13px;
+
+}
+
+
+
+
+
+/* ---------- CUSTOM CURSOR ---------- */
+
+
+.cursor {
+
+
+    width:24px;
+
+    height:24px;
+
+
+    border:
+
+    1px solid #111;
+
+
+    border-radius:50%;
+
+
+    position:fixed;
+
+
+    pointer-events:none;
+
+
+    transform:translate(-50%,-50%);
+
+
+    z-index:9999;
+
+
+    transition:
+
+    width .3s,
+
+    height .3s;
+
+
+}
+
+
+
+
+
+/* ---------- ANIMATION ---------- */
+
+
+@keyframes fadein {
+
+
+from {
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+
+to {
+
+opacity:1;
+
+transform:none;
+
+}
+
+
+}
+
+
+
+
+
+/* ---------- MOBILE ---------- */
 
 
 @media(max-width:800px){
-
 
 
 body {
@@ -526,7 +589,6 @@ body {
     cursor:auto;
 
 }
-
 
 
 
@@ -542,10 +604,20 @@ header {
 
 
 
+h1 {
+
+    font-size:34px;
+
+}
+
+
+
 nav {
 
 
     margin-top:25px;
+
+    display:flex;
 
     flex-direction:column;
 
@@ -558,8 +630,29 @@ nav {
 
 nav a {
 
+    font-size:13px;
 
-    font-size:14px;
+}
+
+
+
+.landing {
+
+
+    padding:25px;
+
+}
+
+
+
+.landing-links {
+
+
+    flex-direction:column;
+
+    gap:20px;
+
+    align-items:center;
 
 
 }
@@ -576,7 +669,17 @@ nav a {
 
 
 
-.page {
+.intro h2 {
+
+
+    letter-spacing:-1px;
+
+
+}
+
+
+
+.archive-header {
 
 
     padding:25px;
@@ -590,16 +693,6 @@ nav a {
 
 
     columns:1;
-
-    padding:25px;
-
-
-}
-
-
-
-.archive-header {
-
 
     padding:25px;
 
@@ -623,8 +716,6 @@ nav a {
 
     display:block;
 
-    overflow:auto;
-
 
 }
 
@@ -645,7 +736,9 @@ nav a {
 .info {
 
 
-    margin-top:25px;
+    width:auto;
+
+    margin-top:30px;
 
 
 }
@@ -657,16 +750,8 @@ nav a {
 
     right:20px;
 
-}
+    font-size:40px;
 
-
-
-.landing-links {
-
-
-    flex-direction:column;
-
-    align-items:center;
 
 }
 
