@@ -502,41 +502,39 @@ footer {
 
 
 
+
+
 /* ---------- CUSTOM CURSOR ---------- */
+
+@media(min-width:801px){
+
+body {
+    cursor:none;
+}
 
 
 .cursor {
 
-    position: fixed;
+    position:fixed;
 
-    width: 40px;
+    width:45px;
 
-    height: 40px;
+    height:45px;
 
-    background: black;
+    background:black;
 
-    border-radius: 50%;
+    border-radius:50%;
 
-    left: 0;
+    z-index:999999;
 
-    top: 0;
+    pointer-events:none;
 
-    z-index: 999999;
-
-    pointer-events: none;
+    transform:translate(-50%,-50%);
 
 }
 
 
-.cursor:hover {
-
-    transform:
-    translate(-15px,-10px)
-    rotate(-5deg)
-    scale(1.2);
-
 }
-
 
 
 
