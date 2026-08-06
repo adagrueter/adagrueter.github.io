@@ -20,98 +20,232 @@
 
 <h1>Ada Grüter</h1>
 
+
 <nav>
 
 <a href="index.html">Home</a>
+<a href="illustration.html">Illustration</a>
 <a href="animation.html">Animation</a>
 <a href="performance.html">Performance</a>
 <a href="freeworks.html">Free Works</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
 
 </nav>
+
 
 </header>
 
 
 
 
-<main class="archive">
+
+<main>
 
 
-<h2>
-Illustration
-</h2>
+<section class="archive-header">
+
+<h2>Illustration</h2>
+
+<p>
+Editorial, books, 3D, analogue and experimental image-making.
+</p>
+
+</section>
 
 
 
-<article class="artwork">
+
+
+<section class="illustration-grid">
+
+
+
+<div class="art-card"
+onclick="openArtwork(
+'images/illustration/01.jpg',
+'Book Illustration Series',
+'Publisher Name · 2025',
+'Analogue drawing and digital composition'
+)">
 
 <img src="images/illustration/01.jpg">
 
-
-<div>
-
-<h3>
-Book Project Title
-</h3>
-
-<p>
-Publisher / Client<br>
-2025
-</p>
-
 </div>
 
-</article>
 
 
 
-
-<article class="artwork">
+<div class="art-card"
+onclick="openArtwork(
+'images/illustration/02.jpg',
+'Editorial Illustration',
+'Magazine Name · 2024',
+'3D modelling and rendered image'
+)">
 
 <img src="images/illustration/02.jpg">
 
-
-<div>
-
-<h3>
-Editorial Illustration
-</h3>
-
-<p>
-Magazine Name<br>
-2024
-</p>
-
 </div>
 
-</article>
 
 
 
 
-<article class="artwork">
+<div class="art-card"
+onclick="openArtwork(
+'images/illustration/03.jpg',
+'Personal Work',
+'Independent · 2025',
+'Mixed media'
+)">
 
 <img src="images/illustration/03.jpg">
 
+</div>
 
-<div>
 
-<h3>
-Personal Series
-</h3>
 
-<p>
-Independent Work<br>
-2024
-</p>
+
+
+<div class="art-card"
+onclick="openArtwork(
+'images/illustration/04.jpg',
+'Visual Research',
+'Personal Project · 2024',
+'Painting and collage'
+)">
+
+<img src="images/illustration/04.jpg">
 
 </div>
 
-</article>
+
+
+
+
+<div class="art-card"
+onclick="openArtwork(
+'images/illustration/05.jpg',
+'Character Design',
+'Commission · 2025',
+'Digital illustration'
+)">
+
+<img src="images/illustration/05.jpg">
+
+</div>
+
+
+
+
+
+<div class="art-card"
+onclick="openArtwork(
+'images/illustration/06.jpg',
+'Experimental Image',
+'Studio Work · 2025',
+'3D and analogue techniques'
+)">
+
+<img src="images/illustration/06.jpg">
+
+</div>
+
+
+
+</section>
 
 
 
 </main>
+
+
+
+
+
+<!-- LIGHTBOX -->
+
+
+<div id="lightbox" class="lightbox">
+
+
+<button class="close"
+onclick="closeArtwork()">
+×
+</button>
+
+
+
+<div class="lightbox-content">
+
+
+<img id="large-image">
+
+
+
+<div class="info">
+
+
+<h3 id="title"></h3>
+
+<p id="details"></p>
+
+<p id="technique"></p>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<script>
+
+
+function openArtwork(image,title,details,technique){
+
+
+document.getElementById("lightbox").style.display="flex";
+
+
+document.getElementById("large-image").src=image;
+
+
+document.getElementById("title").innerHTML=title;
+
+
+document.getElementById("details").innerHTML=details;
+
+
+document.getElementById("technique").innerHTML=technique;
+
+
+}
+
+
+
+function closeArtwork(){
+
+
+document.getElementById("lightbox").style.display="none";
+
+
+}
+
+
+
+</script>
+
+
 
 
 </body>
