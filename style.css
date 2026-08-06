@@ -129,7 +129,6 @@ nav a:hover {
 
 .landing {
 
-
     min-height:80vh;
 
     display:flex;
@@ -142,13 +141,11 @@ nav a:hover {
 
     padding:5vw;
 
-
 }
 
 
 
 .landing-image {
-
 
     width:min(90vw,1400px);
 
@@ -160,7 +157,6 @@ nav a:hover {
 
 .landing-links {
 
-
     display:flex;
 
     gap:50px;
@@ -171,20 +167,17 @@ nav a:hover {
 
     justify-content:center;
 
-
 }
 
 
 
 .landing-links a {
 
-
     font-size:18px;
 
     border-bottom:1px solid transparent;
 
     transition:.3s;
-
 
 }
 
@@ -205,17 +198,14 @@ nav a:hover {
 
 .intro {
 
-
     padding:8vw 5vw;
 
     max-width:1200px;
-
 
 }
 
 
 .intro h2 {
-
 
     font-size:clamp(35px,6vw,90px);
 
@@ -224,7 +214,6 @@ nav a:hover {
     font-weight:300;
 
     letter-spacing:-3px;
-
 
 }
 
@@ -237,7 +226,6 @@ nav a:hover {
 
 .page {
 
-
     padding:5vw;
 
 }
@@ -247,7 +235,6 @@ nav a:hover {
 .page h2,
 .archive-header h2 {
 
-
     font-size:clamp(50px,8vw,110px);
 
     font-weight:300;
@@ -256,7 +243,6 @@ nav a:hover {
 
     margin:0 0 30px;
 
-
 }
 
 
@@ -264,16 +250,13 @@ nav a:hover {
 .page p,
 .archive-header p {
 
-
     max-width:650px;
 
     font-size:18px;
 
     line-height:1.6;
 
-
 }
-
 
 
 
@@ -292,20 +275,17 @@ nav a:hover {
 
 .illustration-grid {
 
-
     columns:3;
 
     column-gap:35px;
 
     padding:0 5vw 5vw;
 
-
 }
 
 
 
 .art-card {
-
 
     break-inside:avoid;
 
@@ -315,25 +295,21 @@ nav a:hover {
 
     overflow:hidden;
 
-
 }
 
 
 
 .art-card img {
 
-
     transition:
     transform .7s ease,
     opacity .7s ease;
-
 
 }
 
 
 
 .art-card:hover img {
-
 
     transform:scale(1.04);
 
@@ -348,20 +324,16 @@ nav a:hover {
 
 .lightbox {
 
-
     display:none;
 
     position:fixed;
 
     inset:0;
 
-
     background:
     rgba(250,249,247,.97);
 
-
     z-index:1000;
-
 
     align-items:center;
 
@@ -369,13 +341,11 @@ nav a:hover {
 
     padding:50px;
 
-
 }
 
 
 
 .lightbox-content {
-
 
     display:flex;
 
@@ -385,13 +355,11 @@ nav a:hover {
 
     max-width:1400px;
 
-
 }
 
 
 
 .lightbox-content img {
-
 
     max-height:85vh;
 
@@ -399,16 +367,13 @@ nav a:hover {
 
     object-fit:contain;
 
-
 }
 
 
 
 .info {
 
-
     width:300px;
-
 
 }
 
@@ -416,18 +381,15 @@ nav a:hover {
 
 .info h3 {
 
-
     font-size:34px;
 
     font-weight:400;
-
 
 }
 
 
 
 .info p {
-
 
     line-height:1.6;
 
@@ -439,13 +401,11 @@ nav a:hover {
 
 .close {
 
-
     position:absolute;
 
     right:40px;
 
     top:25px;
-
 
     font-size:50px;
 
@@ -454,7 +414,6 @@ nav a:hover {
     border:0;
 
     cursor:pointer;
-
 
 }
 
@@ -467,21 +426,17 @@ nav a:hover {
 
 .project {
 
-
     margin-bottom:150px;
 
-
 }
-
 
 
 .project img {
 
-
     width:100%;
 
-
 }
+
 
 
 
@@ -490,7 +445,6 @@ nav a:hover {
 
 
 footer {
-
 
     padding:50px 5vw;
 
@@ -502,66 +456,27 @@ footer {
 
 
 
-
-
-/* ---------- CUSTOM CURSOR ---------- */
-
-@media(min-width:801px){
-
-body {
-    cursor:none;
-}
-
-
-.cursor {
-
-    position:fixed;
-
-    width:45px;
-
-    height:45px;
-
-    background:black;
-
-    border-radius:50%;
-
-    z-index:999999;
-
-    pointer-events:none;
-
-    transform:translate(-50%,-50%);
-
-}
-
-
-}
-
-
-
-
 /* ---------- ANIMATION ---------- */
 
 
 @keyframes fadein {
 
-
 from {
 
-opacity:0;
+    opacity:0;
 
-transform:translateY(30px);
+    transform:translateY(30px);
 
 }
 
 
 to {
 
-opacity:1;
+    opacity:1;
 
-transform:none;
+    transform:none;
 
 }
-
 
 }
 
@@ -573,19 +488,13 @@ transform:none;
 
 
 @media(max-width:800px){
-body {
-    cursor: auto;
-}
-
 
 
 header {
 
-
     display:block;
 
     padding:25px;
-
 
 }
 
@@ -601,7 +510,6 @@ h1 {
 
 nav {
 
-
     margin-top:25px;
 
     display:flex;
@@ -609,7 +517,6 @@ nav {
     flex-direction:column;
 
     gap:15px;
-
 
 }
 
@@ -625,7 +532,6 @@ nav a {
 
 .landing {
 
-
     padding:25px;
 
 }
@@ -634,13 +540,11 @@ nav a {
 
 .landing-links {
 
-
     flex-direction:column;
 
     gap:20px;
 
     align-items:center;
-
 
 }
 
@@ -648,9 +552,7 @@ nav a {
 
 .intro {
 
-
     padding:40px 25px;
-
 
 }
 
@@ -658,9 +560,7 @@ nav a {
 
 .intro h2 {
 
-
     letter-spacing:-1px;
-
 
 }
 
@@ -668,9 +568,7 @@ nav a {
 
 .archive-header {
 
-
     padding:25px;
-
 
 }
 
@@ -678,11 +576,9 @@ nav a {
 
 .illustration-grid {
 
-
     columns:1;
 
     padding:25px;
-
 
 }
 
@@ -690,9 +586,7 @@ nav a {
 
 .lightbox {
 
-
     padding:20px;
-
 
 }
 
@@ -700,9 +594,7 @@ nav a {
 
 .lightbox-content {
 
-
     display:block;
-
 
 }
 
@@ -710,11 +602,9 @@ nav a {
 
 .lightbox-content img {
 
-
     max-width:100%;
 
     max-height:65vh;
-
 
 }
 
@@ -722,11 +612,9 @@ nav a {
 
 .info {
 
-
     width:auto;
 
     margin-top:30px;
-
 
 }
 
@@ -734,35 +622,11 @@ nav a {
 
 .close {
 
-
     right:20px;
 
     font-size:40px;
 
-
 }
 
-
-
-}
-.cursor {
-
-    position: fixed;
-
-    width: 40px;
-
-    height: 40px;
-
-    background: black;
-
-    border-radius: 50%;
-
-    left: 0;
-
-    top: 0;
-
-    z-index: 999999;
-
-    pointer-events: none;
 
 }
