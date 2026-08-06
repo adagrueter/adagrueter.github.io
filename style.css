@@ -1,209 +1,100 @@
-* {
-    box-sizing: border-box;
-}
+/* LANDING */
 
-html {
-    scroll-behavior: smooth;
-}
+.landing {
 
-
-body {
-    margin: 0;
-    background: #f7f3ec;
-    color: #111;
-    font-family: Helvetica, Arial, sans-serif;
-}
-
-
-/* HEADER */
-
-header {
-    padding: 35px 5vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-
-h1 {
-    margin:0;
-    font-size: clamp(28px,4vw,50px);
-    font-weight:400;
-    letter-spacing:-2px;
-}
-
-
-/* NAVIGATION */
-
-nav {
-    display:flex;
-    gap:25px;
-}
-
-
-nav a {
-    color:#111;
-    text-decoration:none;
-    text-transform:uppercase;
-    font-size:12px;
-    letter-spacing:1px;
-}
-
-
-nav a:hover {
-    opacity:0.4;
-}
-
-
-/* INTRO */
-
-.intro {
-    padding:8vw 5vw;
-    max-width:1100px;
-}
-
-
-.intro h2 {
-    font-size:clamp(30px,5vw,70px);
-    font-weight:300;
-    line-height:1.1;
-}
-
-
-/* BILDER */
-
-.gallery {
-
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-    padding:5vw;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
 
 }
 
 
-.gallery img {
+.landing-image {
 
-    width:100%;
-    display:block;
-    transition:transform .5s;
+width:min(90vw,1200px);
 
 }
 
 
-.gallery img:hover {
 
-    transform:scale(1.03);
+.landing-links {
+
+display:flex;
+gap:40px;
+margin-top:40px;
 
 }
 
 
-/* UNTERSEITEN */
+.landing-links a {
+
+text-decoration:none;
+color:black;
+font-size:18px;
+
+}
 
 
-.page {
+
+
+/* ILLUSTRATION ARCHIVE */
+
+
+.archive {
 
 padding:5vw;
 
 }
 
 
-.page h2 {
+.archive h2 {
 
-font-size:clamp(40px,7vw,90px);
+font-size:70px;
 font-weight:300;
+margin-bottom:100px;
 
 }
 
 
-.project {
 
-margin-bottom:80px;
+.artwork {
+
+margin-bottom:140px;
 
 }
 
 
-.project img {
+
+.artwork img {
 
 width:100%;
-height:auto;
+max-width:1400px;
 
 }
 
 
-.project p {
 
-font-size:16px;
-max-width:600px;
-line-height:1.5;
+.artwork div {
 
-}
-
-
-/* MOBILE */
-
-@media(max-width:700px){
-
-
-header {
-
-display:block;
-padding:25px;
+margin-top:20px;
 
 }
 
 
-nav {
 
-margin-top:25px;
-display:flex;
-flex-direction:column;
-gap:15px;
+.artwork h3 {
+
+font-weight:400;
+font-size:28px;
 
 }
 
 
-nav a {
+
+.artwork p {
 
 font-size:14px;
-
-}
-
-
-.intro {
-
-padding:40px 25px;
-
-}
-
-
-.gallery {
-
-display:block;
-padding:25px;
-
-}
-
-
-.gallery img {
-
-margin-bottom:25px;
-
-}
-
-
-.page {
-
-padding:25px;
-
-}
-
-
-.project {
-
-margin-bottom:50px;
-
-}
-
 
 }
