@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Ada Grüter — Visual Artist</title>
@@ -11,23 +13,7 @@
 
 </head>
 
-<div class="cursor"></div>
 
-
-<script>
-
-const cursor=document.querySelector(".cursor");
-
-
-document.addEventListener("mousemove", e=>{
-
-cursor.style.left=e.clientX+"px";
-cursor.style.top=e.clientY+"px";
-
-});
-
-
-</script>
 <body>
 
 
@@ -39,10 +25,15 @@ cursor.style.top=e.clientY+"px";
 <nav>
 
 <a href="illustration.html">Illustration</a>
+
 <a href="animation.html">Animation</a>
+
 <a href="performance.html">Performance</a>
+
 <a href="freeworks.html">Free Works</a>
+
 <a href="about.html">About</a>
+
 <a href="contact.html">Contact</a>
 
 </nav>
@@ -51,164 +42,48 @@ cursor.style.top=e.clientY+"px";
 
 
 
-<main>
 
 
-<section class="intro">
+<main class="landing">
 
-<h2>
-Illustrator & visual artist working across image, movement and performance.
-</h2>
 
-</section>
-
+<img 
+class="landing-image"
+src="images/landing-collage.jpg"
+alt="Ada Grüter artwork collage">
 
 
 
-<section class="projects">
+<div class="landing-links">
 
 
-<!-- PROJECT 1 -->
+<a href="illustration.html">
+Illustration
+</a>
 
-<a class="project-card" href="illustration.html">
 
-<img src="images/illustration/project1.jpg">
+<a href="animation.html">
+Animation
+</a>
 
-<div class="overlay">
 
-<h3>
-Book Illustration
-</h3>
+<a href="performance.html">
+Performance
+</a>
 
-<p>
-Illustration · Publishing · 2025
-</p>
 
-</div>
-
+<a href="freeworks.html">
+Free Works
 </a>
 
 
 
-<!-- PROJECT 2 -->
-
-<a class="project-card" href="animation.html">
-
-<img src="images/animation/project1.jpg">
-
-<div class="overlay">
-
-<h3>
-Animated Worlds
-</h3>
-
-<p>
-Film · Direction · 2024
-</p>
-
 </div>
-
-</a>
-
-
-
-
-<!-- PROJECT 3 -->
-
-<a class="project-card" href="performance.html">
-
-<img src="images/performance/project1.jpg">
-
-<div class="overlay">
-
-<h3>
-Performance Research
-</h3>
-
-<p>
-Direction · Stage · Research
-</p>
-
-</div>
-
-</a>
-
-
-
-
-<!-- PROJECT 4 -->
-
-<a class="project-card" href="freeworks.html">
-
-<img src="images/freeworks/project1.jpg">
-
-<div class="overlay">
-
-<h3>
-Textile & Painting
-</h3>
-
-<p>
-Independent Works
-</p>
-
-</div>
-
-</a>
-
-
-
-
-<!-- PROJECT 5 -->
-
-<a class="project-card" href="illustration.html">
-
-<img src="images/illustration/project2.jpg">
-
-<div class="overlay">
-
-<h3>
-Editorial Illustration
-</h3>
-
-<p>
-Magazines · Commissions
-</p>
-
-</div>
-
-</a>
-
-
-
-
-<!-- PROJECT 6 -->
-
-<a class="project-card" href="animation.html">
-
-<img src="images/animation/project2.jpg">
-
-<div class="overlay">
-
-<h3>
-Moving Images
-</h3>
-
-<p>
-Animation Studies
-</p>
-
-</div>
-
-</a>
-
-
-
-</section>
-
 
 
 </main>
+
+
 
 
 
@@ -220,6 +95,36 @@ Animation Studies
 </p>
 
 </footer>
+
+
+
+
+
+
+
+<!-- CUSTOM CURSOR -->
+
+
+<div class="cursor"></div>
+
+
+<script>
+
+const cursor = document.querySelector(".cursor");
+
+
+document.addEventListener("mousemove", e => {
+
+cursor.style.left = e.clientX + "px";
+
+cursor.style.top = e.clientY + "px";
+
+});
+
+
+</script>
+
+
 
 
 
