@@ -567,10 +567,9 @@ transform:none;
 /* ---------- MOBILE ---------- */
 
 
-@media(min-width:801px){
-
+@media(max-width:800px){
 body {
-    cursor:none;
+    cursor: auto;
 }
 
 
