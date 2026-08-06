@@ -31,8 +31,6 @@ body {
     Arial,
     sans-serif;
 
-    cursor:none;
-
 }
 
 
@@ -508,16 +506,25 @@ footer {
 
 
 .cursor {
+
     position: fixed;
-    top: 0;
+
+    width: 40px;
+
+    height: 40px;
+
+    background: black;
+
+    border-radius: 50%;
+
     left: 0;
-    z-index: 99999;
+
+    top: 0;
+
+    z-index: 999999;
+
     pointer-events: none;
-    font-size: 45px;
-    line-height: 1;
-    transform: translate(-10px, -10px);
-    opacity: 0;
-    transition: opacity .2s;
+
 }
 
 
