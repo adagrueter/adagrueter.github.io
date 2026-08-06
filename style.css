@@ -511,21 +511,20 @@ footer {
 
     position:fixed;
 
-    z-index:9999;
+    top:0;
+    left:0;
+
+    z-index:99999;
 
     pointer-events:none;
 
-    font-size:38px;
+    font-size:45px;
 
-    transform:
-    translate(-15px,-10px)
-    rotate(-15deg);
+    line-height:1;
 
-    transition:
-    transform .15s ease;
+    transform:translate(-10px,-10px);
 
-    filter:
-    drop-shadow(2px 3px 3px rgba(0,0,0,.25));
+    display:block;
 
 }
 
@@ -576,13 +575,10 @@ transform:none;
 /* ---------- MOBILE ---------- */
 
 
-@media(max-width:800px){
-
+@media(min-width:801px){
 
 body {
-
-    cursor:auto;
-
+    cursor:none;
 }
 
 
