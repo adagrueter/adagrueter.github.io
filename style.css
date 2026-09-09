@@ -251,13 +251,13 @@ footer {
     left: -100px;
     z-index: 999999;
     pointer-events: none;
-    width: 15px;
+    width: 10px;
     height: auto;
     transition: width .2s ease;
 }
 .cursor.hover {
-    width: 30px;
-    transition: width .2s ease;
+    width: 20px;
+    transition: width .15s ease;
 }
 
 
