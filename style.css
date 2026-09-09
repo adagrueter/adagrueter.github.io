@@ -248,15 +248,13 @@ footer {
 
 .cursor {
     position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 99999;
+    top: -100px;
+    left: -100px;
+    z-index: 999999;
     pointer-events: none;
     font-size: 45px;
     line-height: 1;
     transform: translate(-10px, -10px);
-    opacity: 0;
-    transition: opacity .2s;
 }
 
 
