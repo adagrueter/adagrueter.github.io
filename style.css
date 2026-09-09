@@ -256,7 +256,7 @@ footer {
     transition: width .2s ease;
 }
 .cursor.hover {
-    width: 65px;
+    width: 30px;
     transition: width .2s ease;
 }
 
