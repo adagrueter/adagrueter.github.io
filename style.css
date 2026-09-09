@@ -360,3 +360,30 @@ nav a {
     border:0;
     cursor: none;
 }
+
+   .lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: 0;
+    font-size: 50px;
+    cursor: none;
+    padding: 20px;
+}
+
+.lightbox-nav.prev {
+    left: 10px;
+}
+
+.lightbox-nav.next {
+    right: 10px;
+}
+
+.lightbox-nav {
+    display: none;
+}
+
+.lightbox.multi .lightbox-nav {
+    display: block;
+}
