@@ -15,248 +15,585 @@ html {
 }
 
 body {
-    margin:0;
-    background:#faf9f7;
-    color:#111;
+    margin: 0;
+    background: #faf9f7;
+    color: #111;
+
     font-family:
-    "Helvetica Neue",
-    Helvetica,
-    Arial,
-    sans-serif;
-    cursor:none;
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    cursor: none;
 }
 
 img {
-    max-width:100%;
-    display:block;
+    max-width: 100%;
+    display: block;
 }
 
 a {
-    color:inherit;
-    text-decoration:none;
+    color: inherit;
+    text-decoration: none;
     cursor: none;
 }
+
 
 /* ---------- HEADER ---------- */
 
 header {
-    position:relative;
-    z-index:10;
-    padding:35px 5vw;
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
+    position: relative;
+    z-index: 10;
+
+    padding: 35px 5vw;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 h1 {
-    font-size:42px;
-    font-weight:400;
-    letter-spacing:-2px;
-    margin:0;
+    font-size: 42px;
+    font-weight: 400;
+    letter-spacing: -2px;
+    margin: 0;
 }
 
 nav {
-    display:flex;
-    gap:30px;
+    display: flex;
+    gap: 30px;
 }
 
 nav a {
-    font-size:12px;
-    text-transform:uppercase;
-    letter-spacing:1.5px;
-    transition:.3s;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+
+    transition: .3s;
 }
 
 nav a:hover {
-    opacity:.45;
+    opacity: .45;
 }
 
 
 /* ---------- LANDING PAGE ---------- */
 
 .landing {
-    min-height:80vh;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    padding:5vw;
+    min-height: 80vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 5vw;
 }
 
 .landing-image {
-    width:min(90vw,1400px);
-    animation:fadein 1.5s ease;
+    width: min(90vw, 1400px);
+
+    animation: fadein 1.5s ease;
 }
 
 .landing-links {
-    display:flex;
-    gap:50px;
-    margin-top:50px;
-    flex-wrap:wrap;
-    justify-content:center;
+    display: flex;
+
+    gap: 50px;
+
+    margin-top: 50px;
+
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .landing-links a {
-    font-size:18px;
-    border-bottom:1px solid transparent;
-    transition:.3s;
+    font-size: 18px;
+
+    border-bottom: 1px solid transparent;
+
+    transition: .3s;
 }
 
 .landing-links a:hover {
-    border-color:#111;
+    border-color: #111;
 }
 
 
 /* ---------- INTRO ---------- */
 
 .intro {
-    padding:8vw 5vw;
-    max-width:1200px;
+    padding: 8vw 5vw;
+
+    max-width: 1200px;
 }
 
 .intro h2 {
-    font-size:clamp(35px,6vw,90px);
-    line-height:1.05;
-    font-weight:300;
-    letter-spacing:-3px;
+    font-size: clamp(35px, 6vw, 90px);
+
+    line-height: 1.05;
+
+    font-weight: 300;
+
+    letter-spacing: -3px;
 }
 
 
 /* ---------- GENERAL PAGES ---------- */
 
 .page {
-    padding:5vw;
+    padding: 5vw;
 }
 
 .page h2,
 .archive-header h2 {
-    font-size:clamp(50px,8vw,110px);
-    font-weight:300;
-    letter-spacing:-5px;
-    margin:0 0 30px;
+    font-size: clamp(50px, 8vw, 110px);
+
+    font-weight: 300;
+
+    letter-spacing: -5px;
+
+    margin: 0 0 30px;
 }
 
 .page p,
 .archive-header p {
-    max-width:650px;
-    font-size:18px;
-    line-height:1.6;
+    max-width: 650px;
+
+    font-size: 18px;
+
+    line-height: 1.6;
 }
 
 
 /* ---------- ILLUSTRATION ARCHIVE ---------- */
 
 .archive-header {
-    padding:5vw;
+    padding: 5vw;
 }
 
 .illustration-grid {
-    columns:3;
-    column-gap:35px;
-    padding:0 5vw 5vw;
+    columns: 3;
+
+    column-gap: 35px;
+
+    padding: 0 5vw 5vw;
 }
 
 .art-card {
-    break-inside:avoid;
-    margin-bottom:35px;
-    cursor:pointer;
-    overflow:hidden;
+    break-inside: avoid;
+
+    margin-bottom: 35px;
+
+    cursor: pointer;
+
+    overflow: hidden;
 }
 
 .art-card img {
     transition:
-    transform .7s ease,
-    opacity .7s ease;
+        transform .7s ease,
+        opacity .7s ease;
 }
 
 .art-card:hover img {
-    transform:scale(1.04);
+    transform: scale(1.04);
 }
 
 
-/* ---------- LIGHTBOX ---------- */
+/* ---------- ART CARD LABEL ---------- */
+
+.card-label {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding-top: 10px;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.card-label span:last-child {
+    opacity: .4;
+}
+
+
+/* ==========================================
+   LIGHTBOX
+========================================== */
 
 .lightbox {
-    display:none;
-    position:fixed;
-    inset:0;
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
     background:
-    rgba(250,249,247,.97);
-    z-index:1000;
-    align-items:center;
-    justify-content:center;
-    padding:50px;
+        rgba(250, 249, 247, .97);
+
+    z-index: 1000;
+
+    align-items: flex-start;
+
+    justify-content: center;
+
+    overflow-y: auto;
+
+    padding: 70px 5vw 50px;
 }
-.lightbox-content {
-    display: flex;
-    align-items: center;
-    gap: 60px;
+
+
+/* ---------- LIGHTBOX INNER ---------- */
+
+.lightbox-inner {
+
+    width: 100%;
+
     max-width: 1400px;
+
     margin: 0 auto;
 }
 
-.lightbox-content img {
-    max-height:85vh;
-    max-width:70vw;
-    object-fit:contain;
+
+/* ---------- LARGE IMAGE AREA ---------- */
+
+.main-image-area {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 68vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
 }
 
+
+/* ---------- LARGE IMAGE ---------- */
+
+.main-image-area > img {
+
+    max-width: 85vw;
+
+    max-height: 68vh;
+
+    width: auto;
+
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* ---------- CLOSE ---------- */
+
+.close {
+
+    position: fixed;
+
+    right: 40px;
+
+    top: 25px;
+
+    z-index: 1005;
+
+    font-size: 50px;
+
+    line-height: 1;
+
+    background: none;
+
+    border: 0;
+
+    cursor: none;
+
+    color: #111;
+
+    padding: 0;
+
+    transition:
+        transform .3s ease,
+        opacity .3s ease;
+}
+
+.close:hover {
+
+    opacity: .45;
+
+    transform: rotate(90deg);
+}
+
+
+/* ==========================================
+   SLIDESHOW ARROWS
+========================================== */
+
+.lightbox-nav {
+
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 1001;
+
+    width: 55px;
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 0;
+
+    background: rgba(250, 249, 247, .85);
+
+    border-radius: 50%;
+
+    font-size: 42px;
+
+    line-height: 1;
+
+    cursor: none;
+
+    padding: 0;
+
+    transition:
+        background .3s ease,
+        color .3s ease,
+        transform .3s ease;
+}
+
+
+.lightbox-nav:hover {
+
+    background: #111;
+
+    color: #faf9f7;
+
+    transform:
+        translateY(-50%)
+        scale(1.05);
+}
+
+
+.lightbox-nav.prev {
+
+    left: 15px;
+}
+
+
+.lightbox-nav.next {
+
+    right: 15px;
+}
+
+
+/* ==========================================
+   THUMBNAILS
+========================================== */
+
+.thumbnails {
+
+    display: flex;
+
+    width: 100%;
+
+    gap: 10px;
+
+    margin-top: 20px;
+
+    padding: 5px 0 15px;
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+
+    scrollbar-width: thin;
+}
+
+
+/* Each thumbnail */
+
+.thumbnail {
+
+    flex: 0 0 auto;
+
+    width: 105px;
+
+    height: 78px;
+
+    padding: 0;
+
+    border: 2px solid transparent;
+
+    background: transparent;
+
+    overflow: hidden;
+
+    opacity: .5;
+
+    cursor: none;
+
+    transition:
+        opacity .3s ease,
+        border-color .3s ease,
+        transform .3s ease;
+}
+
+
+.thumbnail img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.thumbnail:hover {
+
+    opacity: 1;
+
+    transform: translateY(-3px);
+}
+
+
+.thumbnail.active {
+
+    opacity: 1;
+
+    border-color: #111;
+}
+
+
+/* ==========================================
+   PROJECT INFORMATION
+========================================== */
+
+.lightbox-info {
+
+    display: flex;
+
+    align-items: baseline;
+
+    flex-wrap: wrap;
+
+    gap: 25px;
+
+    margin-top: 25px;
+
+    padding: 0 0 35px;
+}
+
+
+.lightbox-title {
+
+    margin: 0;
+
+    font-size: 34px;
+
+    line-height: 1;
+
+    font-weight: 400;
+
+    letter-spacing: -1px;
+}
+
+
+.lightbox-details,
+.lightbox-technique {
+
+    margin: 0;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    opacity: .55;
+}
+
+
+/* ==========================================
+   OLD INFO STYLES
+   Kept so other pages using .info
+   continue to work.
+========================================== */
+
 .info {
-    width:300px;
+    width: 300px;
 }
 
 .info h3 {
-    font-size:34px;
-    font-weight:400;
+    font-size: 34px;
+    font-weight: 400;
 }
 
 .info p {
-    line-height:1.6;
-}
-
-.close {
-    position:absolute;
-    right:40px;
-    top:25px;
-    font-size:50px;
-    background:none;
-    border:0;
-    cursor:pointer;
+    line-height: 1.6;
 }
 
 
 /* ---------- PROJECTS ---------- */
 
 .project {
-    margin-bottom:150px;
+    margin-bottom: 150px;
 }
 
 .project img {
-    width:100%;
+    width: 100%;
 }
 
 
 /* ---------- FOOTER ---------- */
 
 footer {
-    padding:50px 5vw;
-    font-size:13px;
+    padding: 50px 5vw;
+
+    font-size: 13px;
 }
 
 
 /* ---------- CUSTOM CURSOR ---------- */
+
 .cursor {
     position: fixed;
+
     top: -100px;
     left: -100px;
+
     z-index: 999999;
+
     pointer-events: none;
+
     width: 15px;
     height: auto;
+
     transition: width .2s ease;
 }
+
 .cursor.hover {
+
     width: 20px;
+
     transition: width .15s ease;
 }
 
@@ -265,123 +602,268 @@ footer {
 
 @keyframes fadein {
 
-from {
-    opacity:0;
-    transform:translateY(30px);
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+
 }
 
-to {
-    opacity:1;
-    transform:none;
-}
 
-}
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width: 800px) {
 
 
-/* ---------- MOBILE ---------- */
+    body {
+        cursor: auto;
+    }
 
-@media(max-width:800px){
 
-body {
-    cursor: auto;
-}
+    header {
 
-header {
-    display:block;
-    padding:25px;
-}
+        display: block;
 
-h1 {
-    font-size:34px;
-}
+        padding: 25px;
+    }
 
-nav {
-    margin-top:25px;
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-}
 
-nav a {
-    font-size:13px;
-}
+    h1 {
 
-.landing {
-    padding:25px;
-}
+        font-size: 34px;
+    }
 
-.landing-links {
-    flex-direction:column;
-    gap:20px;
-    align-items:center;
-}
 
-.intro {
-    padding:40px 25px;
-}
+    nav {
 
-.intro h2 {
-    letter-spacing:-1px;
-}
+        margin-top: 25px;
 
-.archive-header {
-    padding:25px;
-}
+        display: flex;
 
-.illustration-grid {
-    columns:1;
-    padding:25px;
-}
+        flex-direction: column;
 
-.lightbox {
-    padding:20px;
-}
+        gap: 15px;
+    }
 
-.lightbox-content {
-    display:block;
-}
 
-.lightbox-content img {
-    max-width:100%;
-    max-height:65vh;
-}
+    nav a {
 
-.info {
-    width:auto;
-    margin-top:30px;
-}
+        font-size: 13px;
+    }
 
-.close {
-    position:absolute;
-    right:40px;
-    top:25px;
-    font-size:50px;
-    background:none;
-    border:0;
-    cursor: none;
-}
 
- .lightbox-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: 0;
-    font-size: 50px;
-    cursor: none;
-    padding: 20px;
-    z-index: 1001;
-    display: none;
-}
+    .landing {
 
-.lightbox-nav.prev {
-    left: 20px;
-}
+        padding: 25px;
+    }
 
-.lightbox-nav.next {
-    right: 20px;
-}
 
-.lightbox.multi .lightbox-nav {
-    display: block;
+    .landing-links {
+
+        flex-direction: column;
+
+        gap: 20px;
+
+        align-items: center;
+    }
+
+
+    .intro {
+
+        padding: 40px 25px;
+    }
+
+
+    .intro h2 {
+
+        letter-spacing: -1px;
+    }
+
+
+    .archive-header {
+
+        padding: 25px;
+    }
+
+
+    .illustration-grid {
+
+        columns: 1;
+
+        padding: 25px;
+    }
+
+
+    /* ---------- MOBILE LIGHTBOX ---------- */
+
+    .lightbox {
+
+        padding: 65px 20px 30px;
+
+        align-items: flex-start;
+    }
+
+
+    .lightbox-inner {
+
+        width: 100%;
+    }
+
+
+    .main-image-area {
+
+        min-height: 0;
+
+        height: auto;
+
+        padding-top: 20px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+    }
+
+
+    .main-image-area > img {
+
+        width: 100%;
+
+        max-width: 100%;
+
+        max-height: 60vh;
+
+        object-fit: contain;
+    }
+
+
+    /* ---------- MOBILE ARROWS ---------- */
+
+    .lightbox-nav {
+
+        width: 42px;
+
+        height: 42px;
+
+        font-size: 32px;
+
+        background:
+            rgba(250,249,247,.9);
+    }
+
+
+    .lightbox-nav.prev {
+
+        left: 0;
+    }
+
+
+    .lightbox-nav.next {
+
+        right: 0;
+    }
+
+
+    /* ---------- MOBILE THUMBNAILS ---------- */
+
+    .thumbnails {
+
+        gap: 7px;
+
+        margin-top: 15px;
+
+        padding-bottom: 10px;
+
+        overflow-x: auto;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+
+    .thumbnail {
+
+        width: 78px;
+
+        height: 58px;
+
+        flex: 0 0 78px;
+    }
+
+
+    /* ---------- MOBILE INFO ---------- */
+
+    .lightbox-info {
+
+        display: block;
+
+        margin-top: 20px;
+
+        padding-bottom: 25px;
+    }
+
+
+    .lightbox-title {
+
+        font-size: 28px;
+
+        margin-bottom: 12px;
+    }
+
+
+    .lightbox-details,
+    .lightbox-technique {
+
+        margin-top: 6px;
+
+        font-size: 12px;
+    }
+
+
+    /* ---------- MOBILE CLOSE ---------- */
+
+    .close {
+
+        position: fixed;
+
+        right: 20px;
+
+        top: 15px;
+
+        font-size: 45px;
+
+        cursor: none;
+    }
+
+
+    /* ---------- MOBILE OLD INFO ---------- */
+
+    .info {
+
+        width: auto;
+
+        margin-top: 30px;
+    }
+
+
+    .lightbox-content {
+
+        display: block;
+    }
+
+
+    .lightbox-content img {
+
+        max-width: 100%;
+
+        max-height: 65vh;
+    }
+
 }
