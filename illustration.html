@@ -20,9 +20,7 @@
 
 <h1>Ada Grüter</h1>
 
-
 <nav>
-
 <a href="index.html">Home</a>
 <a href="illustration.html">Illustration</a>
 <a href="animation.html">Animation</a>
@@ -30,222 +28,141 @@
 <a href="freeworks.html">Free Works</a>
 <a href="about.html">About</a>
 <a href="contact.html">Contact</a>
-
 </nav>
-
 
 </header>
 
 
-
-
-
 <main>
 
-
 <section class="archive-header">
-
 <h2>Illustration</h2>
-
-<p>
-Editorial, books, 3D, analogue and experimental image-making.
-</p>
-
+<p>Editorial, books, 3D, analogue and experimental image-making.</p>
 </section>
-
-
-
 
 
 <section class="illustration-grid">
 
 
-
+<!-- EINZELBILD-PROJEKT: nur ein Bild in Array-Klammern -->
 <div class="art-card"
-onclick="openArtwork(
-'images/illustration/01.jpg',
-'Book Illustration Series',
-'Publisher Name · 2025',
-'Analogue drawing and digital composition'
-)">
-
-<img src="images/illustration/01.jpg">
-
+onclick='openArtwork(["images/illustration/Plakat_Festspiele_24.jpg"], "Festspiele Poster", "Festspiele · 2024", "Digital illustration")'>
+<img src="images/illustration/Plakat_Festspiele_24.jpg">
 </div>
 
 
-
-
 <div class="art-card"
-onclick="openArtwork(
-'images/illustration/02.jpg',
-'Editorial Illustration',
-'Magazine Name · 2024',
-'3D modelling and rendered image'
-)">
-
-<img src="images/illustration/02.jpg">
-
+onclick='openArtwork(["images/illustration/SUBOI.png"], "SUBOI", "Personal Project · 2024", "Digital illustration")'>
+<img src="images/illustration/SUBOI.png">
 </div>
 
 
-
-
-
 <div class="art-card"
-onclick="openArtwork(
-'images/illustration/03.jpg',
-'Personal Work',
-'Independent · 2025',
-'Mixed media'
-)">
-
-<img src="images/illustration/03.jpg">
-
+onclick='openArtwork(["images/illustration/Smashdemscheiss.png"], "Smash Dem", "Personal Project · 2024", "Mixed media")'>
+<img src="images/illustration/Smashdemscheiss.png">
 </div>
 
 
-
-
-
+<!-- BUCH-PROJEKT MIT MEHREREN BILDERN: Array mit allen Seiten -->
 <div class="art-card"
-onclick="openArtwork(
-'images/illustration/04.jpg',
-'Visual Research',
-'Personal Project · 2024',
-'Painting and collage'
-)">
-
-<img src="images/illustration/04.jpg">
-
+onclick='openArtwork(["images/illustration/buch-cover.jpg", "images/illustration/buch-seite1.jpg", "images/illustration/buch-seite2.jpg"], "Book Illustration Series", "Publisher Name · 2025", "Analogue drawing and digital composition")'>
+<img src="images/illustration/buch-cover.jpg">
 </div>
-
-
-
-
-
-<div class="art-card"
-onclick="openArtwork(
-'images/illustration/05.jpg',
-'Character Design',
-'Commission · 2025',
-'Digital illustration'
-)">
-
-<img src="images/illustration/05.jpg">
-
-</div>
-
-
-
-
-
-<div class="art-card"
-onclick="openArtwork(
-'images/illustration/06.jpg',
-'Experimental Image',
-'Studio Work · 2025',
-'3D and analogue techniques'
-)">
-
-<img src="images/illustration/06.jpg">
-
-</div>
-
 
 
 </section>
 
-
-
 </main>
-
-
-
 
 
 <!-- LIGHTBOX -->
 
-
 <div id="lightbox" class="lightbox">
 
+<button class="close" onclick="closeArtwork()">×</button>
 
-<button class="close"
-onclick="closeArtwork()">
-×
-</button>
-
-
+<button class="lightbox-nav prev" onclick="prevImage()">‹</button>
+<button class="lightbox-nav next" onclick="nextImage()">›</button>
 
 <div class="lightbox-content">
 
-
 <img id="large-image">
 
-
-
 <div class="info">
-
-
 <h3 id="title"></h3>
-
 <p id="details"></p>
-
 <p id="technique"></p>
+</div>
 
+</div>
 
 </div>
 
 
+<!-- CUSTOM CURSOR -->
+<div class="cursor">
+    🖐
 </div>
-
-
-</div>
-
-
-
-
-
 
 
 <script>
 
+let currentImages = [];
+let currentIndex = 0;
 
-function openArtwork(image,title,details,technique){
+function openArtwork(images, title, details, technique){
 
+    currentImages = images;
+    currentIndex = 0;
 
-document.getElementById("lightbox").style.display="flex";
+    document.getElementById("lightbox").style.display = "flex";
 
+    if (images.length > 1) {
+        document.getElementById("lightbox").classList.add("multi");
+    } else {
+        document.getElementById("lightbox").classList.remove("multi");
+    }
 
-document.getElementById("large-image").src=image;
-
-
-document.getElementById("title").innerHTML=title;
-
-
-document.getElementById("details").innerHTML=details;
-
-
-document.getElementById("technique").innerHTML=technique;
-
+    document.getElementById("large-image").src = images[0];
+    document.getElementById("title").innerHTML = title;
+    document.getElementById("details").innerHTML = details;
+    document.getElementById("technique").innerHTML = technique;
 
 }
 
+function nextImage(){
+    currentIndex = (currentIndex + 1) % currentImages.length;
+    document.getElementById("large-image").src = currentImages[currentIndex];
+}
 
+function prevImage(){
+    currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+    document.getElementById("large-image").src = currentImages[currentIndex];
+}
 
 function closeArtwork(){
-
-
-document.getElementById("lightbox").style.display="none";
-
-
+    document.getElementById("lightbox").style.display = "none";
 }
 
+const cursor = document.querySelector(".cursor");
 
+document.addEventListener("mousemove", e => {
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
+});
+
+const clickable = document.querySelectorAll("a, button, .art-card");
+
+clickable.forEach(el => {
+  el.addEventListener("mouseenter", () => {
+    cursor.classList.add("hover");
+  });
+  el.addEventListener("mouseleave", () => {
+    cursor.classList.remove("hover");
+  });
+});
 
 </script>
-
-
 
 
 </body>
