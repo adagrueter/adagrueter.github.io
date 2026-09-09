@@ -352,8 +352,11 @@ nav a {
 }
 
 .close {
-    right:20px;
-    font-size:40px;
-}
-
+    position:absolute;
+    right:40px;
+    top:25px;
+    font-size:50px;
+    background:none;
+    border:0;
+    cursor: none;
 }
