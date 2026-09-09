@@ -361,7 +361,7 @@ nav a {
     cursor: none;
 }
 
-   .lightbox-nav {
+ .lightbox-nav {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -370,18 +370,16 @@ nav a {
     font-size: 50px;
     cursor: none;
     padding: 20px;
+    z-index: 1001;
+    display: none;
 }
 
 .lightbox-nav.prev {
-    left: 10px;
+    left: 20px;
 }
 
 .lightbox-nav.next {
-    right: 10px;
-}
-
-.lightbox-nav {
-    display: none;
+    right: 20px;
 }
 
 .lightbox.multi .lightbox-nav {
