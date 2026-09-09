@@ -252,8 +252,8 @@ footer {
     left: -100px;
     z-index: 999999;
     pointer-events: none;
-    font-size: 45px;
-    line-height: 1;
+    width: 45px;
+    height: auto;
     transform: translate(-10px, -10px);
 }
 
