@@ -245,7 +245,6 @@ footer {
 
 
 /* ---------- CUSTOM CURSOR ---------- */
-
 .cursor {
     position: fixed;
     top: -100px;
@@ -254,7 +253,11 @@ footer {
     pointer-events: none;
     width: 45px;
     height: auto;
-    transform: translate(-10px, -10px);
+    transition: width .2s ease;
+}
+.cursor.hover {
+    width: 65px;
+    transition: width .2s ease;
 }
 
 
