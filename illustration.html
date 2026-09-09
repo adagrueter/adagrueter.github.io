@@ -194,6 +194,26 @@ function closeArtwork(){
     document.getElementById("lightbox").style.display = "none";
 }
 
+document.addEventListener("keydown", e => {
+
+    const lightboxOpen = document.getElementById("lightbox").style.display === "flex";
+
+    if (!lightboxOpen) return;
+
+    if (e.key === "ArrowRight") {
+        nextImage();
+    }
+
+    if (e.key === "ArrowLeft") {
+        prevImage();
+    }
+
+    if (e.key === "Escape") {
+        closeArtwork();
+    }
+
+});
+
 const cursor = document.querySelector(".cursor");
 
 document.addEventListener("mousemove", e => {
