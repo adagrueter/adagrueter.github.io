@@ -224,24 +224,7 @@ nav a:hover {
     opacity: .4;
 }
 
-    .animation-grid {
 
-        grid-template-columns: 1fr;
-
-        padding: 25px;
-    }
-
-
-    .stills-grid {
-
-        grid-template-columns: 1fr;
-    }
-
-
-    .video-box {
-
-        padding: 40px 20px;
-    }
 /* ==========================================
    LIGHTBOX
 ========================================== */
@@ -548,6 +531,7 @@ nav a:hover {
     opacity: .55;
 }
 
+
 /* ==========================================
    ANIMATION GRID
 ========================================== */
@@ -637,6 +621,8 @@ nav a:hover {
     line-height: 1.6;
     opacity: .8;
 }
+
+
 /* ==========================================
    OLD INFO STYLES
    Kept so other pages using .info
@@ -803,6 +789,26 @@ footer {
         columns: 1;
 
         padding: 25px;
+    }
+
+
+    .animation-grid {
+
+        grid-template-columns: 1fr;
+
+        padding: 25px;
+    }
+
+
+    .stills-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .video-box {
+
+        padding: 40px 20px;
     }
 
 
@@ -1113,4 +1119,6 @@ footer {
     line-height: 1.5;
 
     opacity: .55;
+}
+
 }
