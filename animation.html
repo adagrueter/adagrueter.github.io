@@ -3,6 +3,7 @@
 
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Animation — Ada Grüter</title>
 <link rel="stylesheet" href="style.css">
 </head>
@@ -23,6 +24,8 @@
 <a href="contact.html">Contact</a>
 </nav>
 
+<button class="theme-toggle" onclick="toggleTheme()">◐</button>
+
 </header>
 
 
@@ -35,33 +38,152 @@ Animated films, moving images and experimental visual narratives.
 </p>
 
 
-<div class="project">
+<div class="animation-grid">
 
+
+<div class="video-card"
+onclick='openVideo(
+"https://www.youtube.com/watch?v=VIDEO_ID_1",
+["images/animation/project1-still1.jpg", "images/animation/project1-still2.jpg", "images/animation/project1-still3.jpg"],
+"Film Title",
+"Animation / Direction · Year"
+)'>
 <img src="images/animation/project1.jpg">
-
 <p>
 Film title<br>
 Animation / Direction<br>
 Year
 </p>
-
 </div>
 
 
-<div class="project">
-
+<div class="video-card"
+onclick='openVideo(
+"https://www.youtube.com/watch?v=VIDEO_ID_2",
+["images/animation/project2-still1.jpg", "images/animation/project2-still2.jpg"],
+"Film Title 2",
+"Animation / Collaboration · Year"
+)'>
 <img src="images/animation/project2.jpg">
-
 <p>
 Film title<br>
 Animation / Collaboration<br>
 Year
 </p>
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- VIDEO BOX -->
+
+<div id="video-box" class="video-box">
+
+<button class="close" onclick="closeVideo()">×</button>
+
+<div class="video-box-content">
+
+<div class="video-embed" id="video-embed"></div>
+
+<div class="stills-grid" id="stills-grid"></div>
+
+<div class="video-info">
+<h3 id="video-title"></h3>
+<p id="video-details"></p>
+</div>
+
+</div>
 
 </div>
 
 
-</section>
+<!-- CUSTOM CURSOR -->
+<div class="cursor">
+    🖐
+</div>
+
+
+<script>
+
+function getYouTubeID(url){
+    const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&]+)/);
+    return match ? match[1] : null;
+}
+
+function openVideo(youtubeUrl, stills, title, details){
+
+    const id = getYouTubeID(youtubeUrl);
+
+    document.getElementById("video-embed").innerHTML =
+        '<iframe src="https://www.youtube.com/embed/' + id + '" allowfullscreen></iframe>';
+
+    const stillsContainer = document.getElementById("stills-grid");
+    stillsContainer.innerHTML = "";
+
+    stills.forEach(src => {
+        const img = document.createElement("img");
+        img.src = src;
+        stillsContainer.appendChild(img);
+    });
+
+    document.getElementById("video-title").innerHTML = title;
+    document.getElementById("video-details").innerHTML = details;
+
+    document.getElementById("video-box").style.display = "block";
+    document.body.style.overflow = "hidden";
+
+}
+
+function closeVideo(){
+    document.getElementById("video-box").style.display = "none";
+    document.getElementById("video-embed").innerHTML = "";
+    document.body.style.overflow = "auto";
+}
+
+document.addEventListener("keydown", e => {
+    if (e.key === "Escape") {
+        closeVideo();
+    }
+});
+
+
+function toggleTheme(){
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+        localStorage.setItem("theme", "dark");
+    } else {
+        localStorage.setItem("theme", "light");
+    }
+}
+
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+}
+
+
+const cursor = document.querySelector(".cursor");
+
+document.addEventListener("mousemove", e => {
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
+});
+
+const clickable = document.querySelectorAll("a, button, .video-card");
+
+clickable.forEach(el => {
+  el.addEventListener("mouseenter", () => {
+    cursor.classList.add("hover");
+  });
+  el.addEventListener("mouseleave", () => {
+    cursor.classList.remove("hover");
+  });
+});
+
+</script>
 
 </body>
 </html>
