@@ -224,7 +224,24 @@ nav a:hover {
     opacity: .4;
 }
 
+    .animation-grid {
 
+        grid-template-columns: 1fr;
+
+        padding: 25px;
+    }
+
+
+    .stills-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .video-box {
+
+        padding: 40px 20px;
+    }
 /* ==========================================
    LIGHTBOX
 ========================================== */
