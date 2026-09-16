@@ -972,16 +972,35 @@ footer {
        ANIMATION GRID — MOBILE
     ========================================== */
 
-    .animation-grid {
+  .animation-grid {
 
-        grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
 
-        column-gap: 0;
+    column-gap: 0;
 
-        row-gap: 55px;
+    row-gap: 60px;
 
-        padding: 25px;
-    }
+    padding: 25px;
+}
+
+
+.video-card > p {
+
+    margin-top: 14px;
+
+    font-size: clamp(30px, 10vw, 52px);
+
+    line-height: .88;
+
+    letter-spacing: -2.5px;
+}
+
+
+/* No VIEW badge on phones */
+
+.video-card::after {
+    display: none;
+}
 
 
     .video-card .card-label {
