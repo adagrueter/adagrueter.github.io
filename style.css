@@ -538,22 +538,164 @@ nav a:hover {
 
 .animation-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 0 5vw 5vw;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    column-gap: 24px;
+
+    row-gap: 70px;
+
+    padding: 10px 5vw 7vw;
 }
+
+
+/* ---------- ANIMATION CARD ---------- */
 
 .video-card {
+    position: relative;
+
     cursor: pointer;
-    overflow: hidden;
+
+    overflow: visible;
 }
+
+
+/* ---------- ANIMATION IMAGE ---------- */
 
 .video-card img {
-    transition: transform .7s ease;
+    width: 100%;
+
+    display: block;
+
+    transition:
+        transform .5s cubic-bezier(.2,.8,.2,1),
+        opacity .3s ease;
 }
 
+
 .video-card:hover img {
-    transform: scale(1.04);
+    transform: scale(1.025);
+}
+
+
+/* ==========================================
+   ANIMATION PROJECT TITLES
+========================================== */
+
+.video-card .card-label {
+    display: flex;
+
+    align-items: baseline;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 14px;
+
+    padding: 0;
+
+    line-height: 1.1;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0;
+
+    transition: transform .3s ease;
+}
+
+
+/* ---------- BIG PROJECT TITLE ---------- */
+
+.video-card .card-label span:first-child {
+
+    font-family:
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    font-size: clamp(26px, 2.5vw, 42px);
+
+    font-weight: 900;
+
+    line-height: .9;
+
+    letter-spacing: -2px;
+
+    text-transform: uppercase;
+}
+
+
+/* ---------- YEAR ---------- */
+
+.video-card .card-label span:last-child {
+
+    flex-shrink: 0;
+
+    font-size: 11px;
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    opacity: .45;
+}
+
+
+/* ---------- TITLE HOVER ---------- */
+
+.video-card:hover .card-label {
+    transform: translateY(-3px);
+}
+
+.video-card:hover .card-label span:first-child {
+    letter-spacing: -2.5px;
+}
+
+
+/* ==========================================
+   ANIMATION CARD — VIEW INDICATOR
+========================================== */
+
+.video-card::after {
+
+    content: "VIEW";
+
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    padding: 8px 11px;
+
+    background: #111;
+
+    color: #faf9f7;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    opacity: 0;
+
+    transform: translateY(5px);
+
+    transition:
+        opacity .3s ease,
+        transform .3s ease;
+
+    pointer-events: none;
+}
+
+.video-card:hover::after {
+
+    opacity: 1;
+
+    transform: translateY(0);
 }
 
 
@@ -563,40 +705,59 @@ nav a:hover {
 
 .video-box {
     display: none;
+
     position: fixed;
+
     inset: 0;
+
     background: rgba(250,249,247,.98);
+
     z-index: 1000;
+
     overflow-y: auto;
+
     padding: 70px 5vw 50px;
 }
 
 .video-box-inner {
     width: 100%;
+
     max-width: 1000px;
+
     margin: 0 auto;
 }
 
 .video-embed {
     position: relative;
+
     width: 100%;
+
     padding-top: 56.25%;
+
     background: #000;
 }
 
 .video-embed iframe {
     position: absolute;
+
     top: 0;
+
     left: 0;
+
     width: 100%;
+
     height: 100%;
+
     border: 0;
 }
 
 .stills-grid {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 20px;
+
     margin-top: 50px;
 }
 
@@ -606,19 +767,25 @@ nav a:hover {
 
 .video-info {
     margin-top: 50px;
+
     max-width: 650px;
 }
 
 .video-info h3 {
     margin: 0 0 15px;
+
     font-size: 34px;
+
     font-weight: 400;
+
     letter-spacing: -1px;
 }
 
 .video-info p {
     font-size: 18px;
+
     line-height: 1.6;
+
     opacity: .8;
 }
 
@@ -635,6 +802,7 @@ nav a:hover {
 
 .info h3 {
     font-size: 34px;
+
     font-weight: 400;
 }
 
@@ -792,11 +960,49 @@ footer {
     }
 
 
+    /* ==========================================
+       ANIMATION GRID — MOBILE
+    ========================================== */
+
     .animation-grid {
 
         grid-template-columns: 1fr;
 
+        column-gap: 0;
+
+        row-gap: 55px;
+
         padding: 25px;
+    }
+
+
+    .video-card .card-label {
+
+        margin-top: 12px;
+    }
+
+
+    .video-card .card-label span:first-child {
+
+        font-size: clamp(30px, 10vw, 48px);
+
+        letter-spacing: -2px;
+
+        line-height: .9;
+    }
+
+
+    .video-card .card-label span:last-child {
+
+        font-size: 10px;
+    }
+
+
+    /* Hide VIEW badge on mobile */
+
+    .video-card::after {
+
+        display: none;
     }
 
 
@@ -812,313 +1018,313 @@ footer {
     }
 
 
-  /* ==========================================
-   LIGHTBOX
-========================================== */
+    /* ==========================================
+       LIGHTBOX
+    ========================================== */
 
-.lightbox {
+    .lightbox {
 
-    display: none;
+        display: none;
 
-    position: fixed;
+        position: fixed;
 
-    inset: 0;
+        inset: 0;
 
-    background:
-        rgba(250, 249, 247, .97);
+        background:
+            rgba(250, 249, 247, .97);
 
-    z-index: 1000;
+        z-index: 1000;
 
-    align-items: flex-start;
+        align-items: flex-start;
 
-    justify-content: center;
+        justify-content: center;
 
-    overflow-y: auto;
+        overflow-y: auto;
 
-    padding: 70px 5vw 50px;
-}
+        padding: 70px 5vw 50px;
+    }
 
 
-.lightbox-inner {
+    .lightbox-inner {
 
-    width: 100%;
+        width: 100%;
 
-    max-width: 1400px;
+        max-width: 1400px;
 
-    margin: 0 auto;
+        margin: 0 auto;
 
-    display: grid;
+        display: grid;
 
-    grid-template-columns:
-        minmax(0, 1fr)
-        300px;
+        grid-template-columns:
+            minmax(0, 1fr)
+            300px;
 
-    grid-template-rows:
-        68vh
-        auto;
+        grid-template-rows:
+            68vh
+            auto;
 
-    grid-template-areas:
-        "image info"
-        "thumbs info";
+        grid-template-areas:
+            "image info"
+            "thumbs info";
 
-    column-gap: 60px;
+        column-gap: 60px;
 
-    row-gap: 20px;
-}
+        row-gap: 20px;
+    }
 
 
-/* ---------- LARGE IMAGE ---------- */
+    /* ---------- LARGE IMAGE ---------- */
 
-.main-image-area {
+    .main-image-area {
 
-    grid-area: image;
+        grid-area: image;
 
-    position: relative;
+        position: relative;
 
-    width: 100%;
+        width: 100%;
 
-    height: 68vh;
+        height: 68vh;
 
-    display: flex;
+        display: flex;
 
-    align-items: center;
+        align-items: center;
 
-    justify-content: center;
+        justify-content: center;
 
-    overflow: hidden;
-}
+        overflow: hidden;
+    }
 
 
-.main-image-area > img {
+    .main-image-area > img {
 
-    width: 100%;
+        width: 100%;
 
-    height: 100%;
+        height: 100%;
 
-    max-width: 100%;
+        max-width: 100%;
 
-    max-height: 100%;
+        max-height: 100%;
 
-    object-fit: contain;
-}
+        object-fit: contain;
+    }
 
 
-/* ---------- CLOSE ---------- */
+    /* ---------- CLOSE ---------- */
 
-.close {
+    .close {
 
-    position: fixed;
+        position: fixed;
 
-    right: 40px;
+        right: 40px;
 
-    top: 25px;
+        top: 25px;
 
-    z-index: 1005;
+        z-index: 1005;
 
-    font-size: 50px;
+        font-size: 50px;
 
-    line-height: 1;
+        line-height: 1;
 
-    background: none;
+        background: none;
 
-    border: 0;
+        border: 0;
 
-    cursor: none;
+        cursor: none;
 
-    color: #111;
+        color: #111;
 
-    padding: 0;
+        padding: 0;
 
-    transition:
-        transform .3s ease,
-        opacity .3s ease;
-}
+        transition:
+            transform .3s ease,
+            opacity .3s ease;
+    }
 
 
-.close:hover {
+    .close:hover {
 
-    opacity: .45;
+        opacity: .45;
 
-    transform: rotate(90deg);
-}
+        transform: rotate(90deg);
+    }
 
 
-/* ---------- ARROWS ---------- */
+    /* ---------- ARROWS ---------- */
 
-.lightbox-nav {
+    .lightbox-nav {
 
-    position: absolute;
+        position: absolute;
 
-    top: 50%;
+        top: 50%;
 
-    transform: translateY(-50%);
+        transform: translateY(-50%);
 
-    z-index: 1001;
+        z-index: 1001;
 
-    width: 48px;
+        width: 48px;
 
-    height: 48px;
+        height: 48px;
 
-    display: flex;
+        display: flex;
 
-    align-items: center;
+        align-items: center;
 
-    justify-content: center;
+        justify-content: center;
 
-    border: 0;
+        border: 0;
 
-    background:
-        rgba(250, 249, 247, .85);
+        background:
+            rgba(250, 249, 247, .85);
 
-    border-radius: 50%;
+        border-radius: 50%;
 
-    font-size: 38px;
+        font-size: 38px;
 
-    line-height: 1;
+        line-height: 1;
 
-    cursor: none;
+        cursor: none;
 
-    padding: 0;
-}
+        padding: 0;
+    }
 
 
-.lightbox-nav:hover {
+    .lightbox-nav:hover {
 
-    background: #111;
+        background: #111;
 
-    color: #faf9f7;
-}
+        color: #faf9f7;
+    }
 
 
-.lightbox-nav.prev {
-    left: 10px;
-}
+    .lightbox-nav.prev {
+        left: 10px;
+    }
 
 
-.lightbox-nav.next {
-    right: 10px;
-}
+    .lightbox-nav.next {
+        right: 10px;
+    }
 
 
-/* ---------- THUMBNAILS ---------- */
+    /* ---------- THUMBNAILS ---------- */
 
-.thumbnails {
+    .thumbnails {
 
-    grid-area: thumbs;
+        grid-area: thumbs;
 
-    width: 100%;
+        width: 100%;
 
-    height: 90px;
+        height: 90px;
 
-    display: flex;
+        display: flex;
 
-    gap: 10px;
+        gap: 10px;
 
-    overflow-x: auto;
+        overflow-x: auto;
 
-    overflow-y: hidden;
+        overflow-y: hidden;
 
-    padding: 5px 0 12px;
+        padding: 5px 0 12px;
 
-    scrollbar-width: thin;
-}
+        scrollbar-width: thin;
+    }
 
 
-.thumbnail {
+    .thumbnail {
 
-    flex: 0 0 105px;
+        flex: 0 0 105px;
 
-    width: 105px;
+        width: 105px;
 
-    height: 70px;
+        height: 70px;
 
-    padding: 0;
+        padding: 0;
 
-    border: 2px solid transparent;
+        border: 2px solid transparent;
 
-    background: transparent;
+        background: transparent;
 
-    overflow: hidden;
+        overflow: hidden;
 
-    opacity: .5;
+        opacity: .5;
 
-    cursor: none;
-}
+        cursor: none;
+    }
 
 
-.thumbnail img {
+    .thumbnail img {
 
-    width: 100%;
+        width: 100%;
 
-    height: 100%;
+        height: 100%;
 
-    object-fit: cover;
-}
+        object-fit: cover;
+    }
 
 
-.thumbnail:hover {
+    .thumbnail:hover {
 
-    opacity: 1;
-}
+        opacity: 1;
+    }
 
 
-.thumbnail.active {
+    .thumbnail.active {
 
-    opacity: 1;
+        opacity: 1;
 
-    border-color: #111;
-}
+        border-color: #111;
+    }
 
 
-/* ---------- PROJECT INFORMATION ---------- */
+    /* ---------- PROJECT INFORMATION ---------- */
 
-.lightbox-info {
+    .lightbox-info {
 
-    grid-area: info;
+        grid-area: info;
 
-    align-self: center;
+        align-self: center;
 
-    width: 100%;
+        width: 100%;
 
-    padding-right: 20px;
-}
+        padding-right: 20px;
+    }
 
 
-.lightbox-title {
+    .lightbox-title {
 
-    margin: 0 0 25px;
+        margin: 0 0 25px;
 
-    font-size: 34px;
+        font-size: 34px;
 
-    line-height: 1;
+        line-height: 1;
 
-    font-weight: 400;
+        font-weight: 400;
 
-    letter-spacing: -1px;
-}
+        letter-spacing: -1px;
+    }
 
 
-.lightbox-details {
+    .lightbox-details {
 
-    margin: 0 0 12px;
+        margin: 0 0 12px;
 
-    font-size: 13px;
+        font-size: 13px;
 
-    line-height: 1.5;
+        line-height: 1.5;
 
-    opacity: .55;
-}
+        opacity: .55;
+    }
 
 
-.lightbox-technique {
+    .lightbox-technique {
 
-    margin: 0;
+        margin: 0;
 
-    font-size: 13px;
+        font-size: 13px;
 
-    line-height: 1.5;
+        line-height: 1.5;
 
-    opacity: .55;
-}
+        opacity: .55;
+    }
 
 }
