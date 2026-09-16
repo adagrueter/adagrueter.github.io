@@ -531,7 +531,6 @@ nav a:hover {
     opacity: .55;
 }
 
-
 /* ==========================================
    ANIMATION GRID
 ========================================== */
@@ -544,7 +543,7 @@ nav a:hover {
 
     column-gap: 24px;
 
-    row-gap: 70px;
+    row-gap: 75px;
 
     padding: 10px 5vw 7vw;
 }
@@ -580,35 +579,13 @@ nav a:hover {
 
 
 /* ==========================================
-   ANIMATION PROJECT TITLES
+   ANIMATION PROJECT TITLE
 ========================================== */
 
-.video-card .card-label {
-    display: flex;
-
-    align-items: baseline;
-
-    justify-content: space-between;
-
-    gap: 15px;
-
-    margin-top: 14px;
+.video-card > p {
+    margin: 16px 0 0;
 
     padding: 0;
-
-    line-height: 1.1;
-
-    text-transform: uppercase;
-
-    letter-spacing: 0;
-
-    transition: transform .3s ease;
-}
-
-
-/* ---------- BIG PROJECT TITLE ---------- */
-
-.video-card .card-label span:first-child {
 
     font-family:
         "Helvetica Neue",
@@ -616,42 +593,73 @@ nav a:hover {
         Arial,
         sans-serif;
 
-    font-size: clamp(26px, 2.5vw, 42px);
+    font-size: clamp(27px, 2.7vw, 44px);
 
     font-weight: 900;
 
-    line-height: .9;
+    line-height: .92;
 
-    letter-spacing: -2px;
+    letter-spacing: -2.5px;
 
     text-transform: uppercase;
-}
 
+    color: #111;
 
-/* ---------- YEAR ---------- */
-
-.video-card .card-label span:last-child {
-
-    flex-shrink: 0;
-
-    font-size: 11px;
-
-    font-weight: 400;
-
-    letter-spacing: 1px;
-
-    opacity: .45;
+    transition:
+        transform .3s ease,
+        letter-spacing .3s ease;
 }
 
 
 /* ---------- TITLE HOVER ---------- */
 
-.video-card:hover .card-label {
+.video-card:hover > p {
     transform: translateY(-3px);
+
+    letter-spacing: -3px;
 }
 
-.video-card:hover .card-label span:first-child {
-    letter-spacing: -2.5px;
+
+/* ==========================================
+   VIEW LABEL
+========================================== */
+
+.video-card::after {
+    content: "VIEW";
+
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    padding: 8px 11px;
+
+    background: #111;
+
+    color: #faf9f7;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    opacity: 0;
+
+    transform: translateY(5px);
+
+    transition:
+        opacity .3s ease,
+        transform .3s ease;
+
+    pointer-events: none;
+}
+
+
+.video-card:hover::after {
+    opacity: 1;
+
+    transform: translateY(0);
 }
 
 
