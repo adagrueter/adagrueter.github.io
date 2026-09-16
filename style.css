@@ -552,11 +552,11 @@ nav a:hover {
     grid-template-columns:
         repeat(3, minmax(0, 1fr));
 
-    column-gap: 24px;
+    column-gap: 15px;
 
     row-gap: 75px;
 
-    padding: 40px 5 7vw; 
+    padding: 40px 5vw 7vw; 
 }
 
 
