@@ -621,9 +621,8 @@ nav a:hover {
 
 /* ---------- TITLE HOVER ---------- */
 
-.video-card:hover > p {
+.video-card:hover .video-title {
     transform: translateY(-3px);
-
     letter-spacing: -3px;
 }
 
