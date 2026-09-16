@@ -583,7 +583,7 @@ nav a:hover {
    ANIMATION PROJECT TITLE
 ========================================== */
 
-.video-title {
+.video-card > p {
     margin: 16px 0 0;
     padding: 0;
     font-family:
@@ -600,22 +600,6 @@ nav a:hover {
     transition:
         transform .3s ease,
         letter-spacing .3s ease;
-}
-
-.video-meta {
-    margin: 6px 0 0;
-    padding: 0;
-    font-family:
-        "Helvetica Neue",
-        Helvetica,
-        Arial,
-        sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    letter-spacing: 0;
-    text-transform: none;
-    color: #111;
-    opacity: .55;
 }
 
 
