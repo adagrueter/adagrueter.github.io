@@ -186,7 +186,7 @@ nav a:hover {
 .illustration-grid {
     columns: 3;
 
-    column-gap: 25px;
+    column-gap: 15px;
 
     padding: 0 5vw 5vw;
 }
